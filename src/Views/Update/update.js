@@ -12,7 +12,7 @@ const [food , setFood] = useState({
     description:""
 })
 const loadfood = async()=>{
-    const res = await axios.get(`https://projectback1-arab.onrender.com/food/${id}`)
+    const res = await axios.get(`${process.env.REACT_APP_API_URL}/food/${id}`)
     setFood(res.data.data)
 }
 useEffect(()=>{
@@ -20,7 +20,7 @@ useEffect(()=>{
 },[id])
 async function updatefood() {
   try{
-  const res = await axios.put(`https://projectback1-arab.onrender.com/food/${id}`,{
+  const res = await axios.put(`${process.env.REACT_APP_API_URL}/food/${id}`,{
   name:food.name,
   price:food.price,
   description:food.description

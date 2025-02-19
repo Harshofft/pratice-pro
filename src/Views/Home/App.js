@@ -6,7 +6,7 @@ import Foodcard from '../../Components/Foodcard/Foodcard'
 function App() {
   const [food , setFood] = useState([])
   const loadfood = async()=>{
-    const res = await axios.get("https://projectback1-arab.onrender.com/food")
+    const res = await axios.get(`${process.env.REACT_APP_API_URL}/food`)
     setFood(res.data.data)
   }
   useEffect(() => {

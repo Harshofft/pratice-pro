@@ -6,7 +6,7 @@ function Detail() {
     const [food,setFood] = useState({})
     const {id} = useParams()
     const loadfood = async()=>{
-        const res = await axios.get(`https://projectback1-arab.onrender.com/food/${id}`)
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/food/${id}`)
         setFood(res.data.data)
     }
     useEffect(() => {

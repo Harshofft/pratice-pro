@@ -12,7 +12,7 @@ function Add() {
     })
     async function addFood() {
         try{
-        const res = await axios.post('https://projectback1-arab.onrender.com/food',{
+        const res = await axios.post(`${process.env.REACT_APP_API_URL}/food`,{
             id:food.id,
             name:food.name,
             price:food.price,
