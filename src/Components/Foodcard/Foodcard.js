@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 function Foodcard({ name, price, id, description }) {
   const navigate = useNavigate()
   const delBtn = async (id) => {
-    const res = await axios.delete(`http://localhost:5001/food/${id}`)
+    const res = await axios.delete(`https://projectback1-arab.onrender.com/food/${id}`)
     window.location.reload()
     console.log(res.data.data)
   }
